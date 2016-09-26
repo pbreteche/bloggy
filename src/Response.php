@@ -5,13 +5,14 @@
  */
 class Response
 {
+    private $content;
 
-    function send()
+    public function send()
     {
         echo $this->content;
     }
 
-    function setContent($content)
+    public function setContent($content)
     {
         $this->content = $content;
     }

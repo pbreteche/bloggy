@@ -2,7 +2,7 @@
 
 class Request
 {
-    function getQueryParameter($parameterName, $defaultValue=null)
+    public function getQueryParameter($parameterName, $defaultValue=null)
     {
         $queryParameter = $defaultValue;
         if (isset($_GET[$parameterName])) {
