@@ -1,5 +1,11 @@
 <?php
+require_once 'Response.php';
 
-class Blog {
-  
+
+class Blog
+{
+    function handleRequest($request)
+    {
+        return new Response();
+    }
 }
