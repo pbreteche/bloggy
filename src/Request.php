@@ -4,9 +4,14 @@ class Request
 {
     private $getParameter;
 
-    public function __construct()
+    public static function createFromGlobals()
     {
-        $this->getParameter = $_GET;
+        return new self($_GET);
+    }
+
+    public function __construct($get)
+    {
+        $this->getParameter = $get;
     }
 
     public function getQueryParameter($parameterName, $defaultValue=null)
