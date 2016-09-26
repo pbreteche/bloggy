@@ -8,6 +8,11 @@ class Response
 
     function send()
     {
-        echo 'Hello world!';
+        echo $this->content;
+    }
+
+    function setContent($content)
+    {
+        $this->content = $content;
     }
 }

@@ -6,6 +6,8 @@ class Blog
 {
     function handleRequest(Request $request)
     {
-        return new Response();
+        $response = new Response();
+        $response->setContent('Hello world!');
+        return $response;
     }
 }
