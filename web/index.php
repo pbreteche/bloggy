@@ -1,11 +1,10 @@
 <?php
 set_include_path ( '../src' );
+require_once('autoload.php');
 
 use Bloggy\HttpMessaging\Request;
 use Bloggy\Blog;
 
-require_once 'Blog.php';
-require_once 'Request.php';
 
 $request = Request::createFromGlobals();
 $blog = new Blog();
