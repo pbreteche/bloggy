@@ -1,6 +1,10 @@
 <?php
-require_once 'Response.php';
+namespace Bloggy;
 
+use Bloggy\HttpMessaging\Response;
+use Bloggy\HttpMessaging\Request;
+
+require_once 'Response.php';
 
 class Blog
 {

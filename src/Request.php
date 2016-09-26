@@ -1,5 +1,7 @@
 <?php
 
+namespace Bloggy\HttpMessaging;
+
 class Request
 {
     private $getParameter;
