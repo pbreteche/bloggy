@@ -1,6 +1,5 @@
 <?php
-set_include_path ( '../src' );
-require_once('autoload.php');
+require_once('../vendor/autoload.php');
 
 use Bloggy\HttpMessaging\Request;
 use Bloggy\Blog;

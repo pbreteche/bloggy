@@ -1,0 +1,16 @@
+{
+    "name": "pierre/bloggy",
+    "description": "An amazing blog made in OO PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pierre Bretéché",
+            "email": "pbreteche@dawan.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Bloggy\\": "src/Bloggy/"}
+    },
+    "require": {}
+}
