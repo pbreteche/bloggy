@@ -1,16 +1,19 @@
 <?php
 namespace Bloggy;
 
-use Bloggy\HttpMessaging\Response;
 use Bloggy\HttpMessaging\Request;
+use Bloggy\Routing\Router;
 
 class Blog
 {
     public function handleRequest(Request $request)
     {
-        $name = $request->getQueryParameter('name', 'world');
-        $response = new Response();
-        $response->setContent('Hello ' . $name . '!');
+        $router = new Router();
+        $actionConfiguration = $router->getActionConfiguration($request);
+        $response  = call_user_func_array(
+                $actionConfiguration->getController(),
+                $actionConfiguration->getArguments()
+        );
         return $response;
     }
 }
