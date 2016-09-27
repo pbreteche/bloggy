@@ -2,30 +2,18 @@
 
 namespace Bloggy\Model;
 
-class Article
+class Article extends Publication
 {
-
-    private $title;
     private $publishedAt;
-    private $body;
 
     public function __construct($title, $publishedAt, $body)
     {
-        $this->title = $title;
         $this->publishedAt = $publishedAt;
-        $this->body = $body;
+        parent::__construct($title, $body);
     }
 
-    public function getTitle()
-    {
-        return $this->title;
-    }
     public function getPublishedAt()
     {
         return $this->publishedAt;
-    }
-    public function getBody()
-    {
-        return $this->body;
     }
 }
