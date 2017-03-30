@@ -2,6 +2,7 @@
 namespace Bloggy\Routing;
 
 use Bloggy\HttpMessaging\Request;
+use Bloggy\Routing\Exception\RouteNotFoundException;
 
 class Router
 {
@@ -11,6 +12,9 @@ class Router
     {
         $config = $this->loadConfig();
         $type = $request->getQueryParameter('type', 'page');
+        if (!isset($config[$type])) {
+            throw new RouteNotFoundException('Non route found for ' . $type);
+        }
         $arguments = array();
         foreach($config[$type]['argumentNames'] as $argumentName) {
             $arguments[$argumentName] = $request->getQueryParameter($argumentName);

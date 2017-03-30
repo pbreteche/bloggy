@@ -10,10 +10,18 @@ class Blog
     {
         $router = new Router();
         $actionConfiguration = $router->getActionConfiguration($request);
-        $response  = call_user_func_array(
-                $actionConfiguration->getController(),
-                $actionConfiguration->getArguments()
-        );
+        try {
+            $response  = call_user_func_array(
+                    $actionConfiguration->getController(),
+                    $actionConfiguration->getArguments()
+            );
+        }
+        catch(ResourceNotFoundException $e) {
+
+        }
+        catch(NonRespondingDatabaseException $e) {
+            return new Response();
+        }
         return $response;
     }
 }
